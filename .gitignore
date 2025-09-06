@@ -1,0 +1,9 @@
+*.pt
+!/data/*.pt
+/data/results/*.csv
+*.pkl
+/data/shanghaitech/*.csv
+
+**.pyc
+.DS_Store
+*.DS_Store
