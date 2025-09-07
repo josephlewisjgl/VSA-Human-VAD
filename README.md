@@ -24,13 +24,15 @@ Python dependencies are installed as part of the notebooks used to run code, as 
 
 To run the pose estimation pipeline you will need the raw datasets for the CUHK-Avenue and ShanghaiTech data.
 
-The CUHK-Avenue data is made available by the author via Kaggle: 
+The CUHK-Avenue data is made available by the author via Kaggle: https://www.kaggle.com/datasets/joelewis/hr-avenueframedata
 
-The ShanghaiTech data can be retrieved from the original authors: 
+The ShanghaiTech data can be retrieved from the original authors: https://svip-lab.github.io/dataset/campus_dataset.html
 
 Both should be placed in the `VSA-VAD` directories or have filepaths updated. Note: The ShanghaiTech dataset is very large so may favour placement on a cloud drive/storage space.
 
 As an alternative if you would like to work with pre-extracted poses it is sufficient to just use the datasets cloned in this repo in the `/data/` folder. For validation you may favour extracting labels/frames yourself but the ones provided are used in the paper.
+
+For the ShanghaiTech datasets the pre-extracted poses are also stored on Kaggle: https://www.kaggle.com/datasets/joelewis/shanghaitechtrainandtestposes
 
 ### Baselines (optional)
 
@@ -53,9 +55,11 @@ If you are not interested in collecting poses you can:
 01_CollectPoses.ipynb: 
 * Detect poses and build structured dataset for training frames with the edge and post-hoc systems
 * Detect poses and build structured dataset for test frames with just the post-hoc system (edge system poses are detected at runtime)
+* Can be skipped if using pre-extracted poses
 
 02_AnomalyDetection.ipynb:
 * Runs the experiments and ablations described in results on HR-Avenue
+* Skip evaluation of edge system with poses if using pre-extracted poses
 
 03_IsoForest.ipynb:
 * Runs the Isolation Forest baseline method for results
@@ -78,7 +82,7 @@ If you are not interested in collecting poses you can:
 To reproduce the ShanghaiTech results of the report, the notebooks STC-01 and STC-02 should be run:
 
 STC-01.ipynb:
-* Runs pose estimation on the STC dataset
+* Runs pose estimation on the STC dataset (canbe skipped if using pre-extracted poses).
 
 STC-02.ipynb:
 * Runs the VSA anomaly detection pipeline on the STC dataset outputting the CSV file that is used in the results.
