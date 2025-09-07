@@ -11,7 +11,7 @@ This root directory is where the Avenue Dataset (described below) or ShanghaiTec
 In this directory clone the repo:
 
 ```
-git clone 
+git clone https://github.com/josephlewisjgl/VSA-Human-VAD.git
 ```
 
 Then each Python notebook should be run in the relative directory i.e. with the working directory set to `VSA-VAD/VSA-Human-VAD`.
